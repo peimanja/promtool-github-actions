@@ -1,0 +1,22 @@
+name: 'Promtool GitHub Actions'
+description: 'Runs Prometheus Promtool commands via GitHub Actions.'
+author: 'Peiman Jafari'
+branding:
+  icon: 'terminal'
+  color: 'purple'
+inputs:
+  promtool_actions_subcommand:
+    description: 'Promtool subcommand to execute (configs or rules).'
+    required: true
+  promtool_actions_files:
+    description: 'Path to files. Can be something like `configs/*.yml` or `alert_rules/*.yml`.'
+    required: true
+  promtool_actions_version:
+    description: 'Promtool version to install.'
+    default: 'latest'
+  promtool_actions_comment:
+    description: 'Whether or not to comment on pull requests.'
+    default: true
+runs:
+  using: 'docker'
+  image: './Dockerfile'
