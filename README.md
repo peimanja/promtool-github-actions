@@ -40,7 +40,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Check Prometheus configs
-      uses: peimanja/promtool-github-actions@vmaster
+      uses: peimanja/promtool-github-actions@master
       with:
         promtool_actions_subcommand: 'config'
         promtool_actions_files: 'prometheus/config/*.yml'
