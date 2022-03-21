@@ -32,7 +32,7 @@ function parseInputs {
 function installPromtool {
   if [[ "${promtoolVersion}" == "latest" ]]; then
     echo "Checking the latest version of Promtool"
-    promtoolVersion=$(git ls-remote --tags --refs --sort="v:refname"  git://github.com/prometheus/prometheus | grep -v '[-].*' | tail -n1 | sed 's/.*\///' | cut -c 2-)
+    promtoolVersion=$(git ls-remote --tags --refs --sort="v:refname"  https://github.com/prometheus/prometheus | grep -v '[-].*' | tail -n1 | sed 's/.*\///' | cut -c 2-)
     if [[ -z "${promtoolVersion}" ]]; then
       echo "Failed to fetch the latest version"
       exit 1
